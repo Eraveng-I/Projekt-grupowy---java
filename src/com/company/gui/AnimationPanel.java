@@ -1,7 +1,5 @@
 package com.company.gui;
 
-import com.company.gui.Animation;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -24,7 +22,7 @@ public class AnimationPanel extends JPanel {
         g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
         g2d.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_PURE);
 
-        animation.renderFps(g2d);
+        animation.render(g2d);
     }
 }
 

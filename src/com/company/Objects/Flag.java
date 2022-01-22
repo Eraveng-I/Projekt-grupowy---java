@@ -83,7 +83,6 @@ public class Flag{
     private Vector2D separation(ArrayList<Flag> objects) {
         Vector2D steer = Vector2D.ZERO;
         int count = 0;
-
         for (var i : flagsIndices) {
             if (i == index) {
                 continue;
@@ -112,8 +111,30 @@ public class Flag{
         return steer;
     }
 
-    public void update(ArrayList<Flag> objects){
+    private Vector2D ballContact(GoldenBall ball) {
+        Vector2D steer = Vector2D.ZERO;
+        if (ball.getInvertedPosition().subtract(position).magnitude() < ball.getDiameter()) {
+            float distance = Vector2D.distance(position, ball.getInvertedPosition());
+            Vector2D diff = position.subtract(ball.getInvertedPosition());
+            if (distance * distance > 0) {
+                diff = diff.divide(distance * distance);
+            }
+            steer = steer.add(diff);
+
+            if (steer.magnitude() > 0) {
+                steer.normalize();
+                steer = steer.multiply(maxSpeed);
+            }
+            steer = steer.subtract(velocity);
+            steer.limit(maxAcceleration);
+            steer = steer.multiply(separationWeight * 2);
+        }
+        return steer;
+    }
+
+    public void update(ArrayList<Flag> objects, GoldenBall ball){
         acceleration = Vector2D.ZERO;
+        acceleration = acceleration.add(ballContact(ball));
         acceleration = acceleration.add(separation(objects));
         if (acceleration == Vector2D.ZERO) acceleration = velocity.multiply(0.1);
         velocity = velocity.add(acceleration.multiply(Animation.frameTime));
