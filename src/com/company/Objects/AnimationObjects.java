@@ -10,6 +10,7 @@ import java.util.concurrent.Executors;
 public class AnimationObjects {
     private final AnimationPanel panel;
     private final ArrayList<Flag> objects = new ArrayList<>();
+    private GoldenBall ball;
     private ExecutorService executorService;
 
     public AnimationObjects(AnimationPanel panel){this.panel = panel;}
@@ -23,6 +24,7 @@ public class AnimationObjects {
         Flag.setUpFlag(panel, objects, Color.BLACK);
         Flag.setUpFlag(panel, objects, Color.BLUE);
         Flag.setUpFlag(panel, objects, Color.GRAY);
+        ball = GoldenBall.setUpBall(panel, Color.decode("#D8C841"));
         executorService = Executors.newFixedThreadPool(objects.size());
     }
     public void updateParallel()
@@ -35,5 +37,9 @@ public class AnimationObjects {
 
     public ArrayList<Flag> getObjects() {
         return objects;
+    }
+
+    public GoldenBall getBall() {
+        return ball;
     }
 }
