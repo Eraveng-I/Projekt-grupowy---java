@@ -31,7 +31,7 @@ public class AnimationObjects {
     {
         for (int i = 0; i < objects.size();i++){
             int finalI = i;
-            executorService.submit(()->objects.get(finalI).update(objects));
+            executorService.submit(()->objects.get(finalI).update(objects, ball));
         }
     }
 

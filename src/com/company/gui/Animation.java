@@ -63,7 +63,7 @@ public class Animation {
     }
 
 
-    public void renderFps(Graphics2D g2d) {
+    public void render(Graphics2D g2d) {
         objects.getObjects().stream().filter(Objects::nonNull).forEach(o -> o.render(g2d));
         objects.getBall().render(g2d);
         g2d.setColor(Color.GREEN);

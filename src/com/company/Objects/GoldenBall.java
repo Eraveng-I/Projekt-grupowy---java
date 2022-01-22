@@ -22,7 +22,8 @@ public class GoldenBall {
     }
 
     public static GoldenBall setUpBall(AnimationPanel panel, Color color) {
-        return new GoldenBall(new Vector2D(((float)panel.getHeight())/2f-diameter/2, ((float)panel.getWidth())/2f-diameter/2), color, panel);
+//        return new GoldenBall(new Vector2D(((float)panel.getHeight())/2f-diameter/2, ((float)panel.getWidth())/2f-diameter/2), color, panel);
+        return new GoldenBall(new Vector2D(250 - diameter/2, 500 - diameter/2), color, panel);
     }
 
     public void render(Graphics2D g2d){
@@ -35,6 +36,15 @@ public class GoldenBall {
     }
 
     public float getY() {
-        return position.y;
+        return position.x;
+    }
+
+    public Vector2D getInvertedPosition() {
+        return new Vector2D(500 - diameter/4, 250 - diameter/4);
+//        return new Vector2D(position.y, position.x);
+    }
+
+    public float getDiameter() {
+        return diameter;
     }
 }
