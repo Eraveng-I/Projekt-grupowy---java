@@ -43,6 +43,12 @@ public class GUI {
         animationPanel.startAnimation();
     }
 
+    public static void setWinnerButtonVisible ()
+    {
+        winnerButton.setVisible(true);
+    }
+
+
     public static void main(String[] args) {
         SwingUtilities.invokeLater(GUI::new);
     }
