@@ -41,6 +41,8 @@ public class WinCommunicat {
         });
 
 
+
+
         winComm.add(panel);
         panel.add(communicat);
         panel.add(Restart);
