@@ -12,6 +12,7 @@ public class GUI {
     public static WinCommunicat comm = new WinCommunicat();
     public static JButton winnerButton = new JButton("Announce the winner");
     public static JButton looserButton = new JButton("Vote for Lewy");
+    public static JButton funFact = new JButton("Ciekawostka");
     public GUI(){
 
         comm.setParameters();
@@ -51,7 +52,6 @@ public class GUI {
             }
         });
 
-        JButton funFact = new JButton();
         funFact.setBounds(500,3000,200,200);
         funFact.setBackground(Color.cyan);
         animationPanel.add(funFact);
