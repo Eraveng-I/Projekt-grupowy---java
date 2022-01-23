@@ -23,6 +23,7 @@ public class Flag{
     private final AnimationPanel panel;
     private int index;
     private float maxSpeed = 200f; // zmienione z 80 na 200
+    private float averageSpeed = 80f;
     private float maxAcceleration = 10f;
     private float separationWeight = 10f;
     private boolean isWinner = false;
@@ -143,7 +144,9 @@ public class Flag{
         acceleration = Vector2D.ZERO;
         acceleration = acceleration.add(ballContact(ball));
         acceleration = acceleration.add(separation(objects));
-        if (acceleration == Vector2D.ZERO) acceleration = velocity.multiply(0.1);
+        if (acceleration.equals(Vector2D.ZERO)){
+            velocity = velocity.normalized().multiply(averageSpeed);
+        }
         velocity = velocity.add(acceleration.multiply(Animation.frameTime));
         if (velocity.magnitude() > 0) {
             velocity.limit(maxSpeed);

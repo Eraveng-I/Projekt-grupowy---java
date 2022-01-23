@@ -1,5 +1,6 @@
 package com.company.math;
 
+import java.util.Objects;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -133,4 +134,17 @@ public class Vector2D {
     public float getXPosition() {return this.x;}
 
     public float getYPosition() {return this.y;}
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Vector2D)) return false;
+        Vector2D vector2D = (Vector2D) o;
+        return Float.compare(vector2D.x, x) == 0 && Float.compare(vector2D.y, y) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
+    }
 }
