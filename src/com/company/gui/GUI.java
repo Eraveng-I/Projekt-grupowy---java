@@ -47,7 +47,7 @@ public class GUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 var polandFlag = animationPanel.getAnimation().getObjects().getBallByColor(Color.RED);
-                polandFlag.setIslooser(true);
+                polandFlag.setIsLooser(true);
             }
         });
         
