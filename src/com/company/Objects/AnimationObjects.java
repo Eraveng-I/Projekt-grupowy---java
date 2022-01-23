@@ -28,7 +28,7 @@ public class AnimationObjects {
         Flag.setUpFlag(panel, objects, new ImageIcon("flag5.png").getImage(),Color.GREEN);
         Flag.setUpFlag(panel, objects, new ImageIcon("flag6.png").getImage(),Color.GREEN);
         Flag.setUpFlag(panel, objects, new ImageIcon("flag7.png").getImage(),Color.GREEN);
-        ball = GoldenBall.setUpBall(panel, Color.decode("#D8C841"));
+        ball = GoldenBall.setUpBall(panel, Color.decode("#D8C841"), new ImageIcon("ballondor.png").getImage());
         executorService = Executors.newFixedThreadPool(objects.size());
     }
     public void updateParallel()
