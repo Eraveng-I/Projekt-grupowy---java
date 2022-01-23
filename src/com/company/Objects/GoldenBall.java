@@ -13,22 +13,25 @@ public class GoldenBall {
     private static float diameter = 100f;
     private Shape shape;
     private final AnimationPanel panel;
+    private Image image;
 
-    public GoldenBall(Vector2D position, Color color, AnimationPanel panel) {
+    public GoldenBall(Vector2D position, Color color, AnimationPanel panel, Image image) {
         this.position = position;
         this.color = color;
         this.shape = new Ellipse2D.Float(position.y, position.x, diameter, diameter);
         this.panel = panel;
+        this.image = image;
     }
 
-    public static GoldenBall setUpBall(AnimationPanel panel, Color color) {
+    public static GoldenBall setUpBall(AnimationPanel panel, Color color, Image image) {
 //        return new GoldenBall(new Vector2D(((float)panel.getHeight())/2f-diameter/2, ((float)panel.getWidth())/2f-diameter/2), color, panel);
-        return new GoldenBall(new Vector2D(250 - diameter/2, 500 - diameter/2), color, panel);
+        return new GoldenBall(new Vector2D(250 - diameter/2, 500 - diameter/2), color, panel, image);
     }
 
     public void render(Graphics2D g2d){
         g2d.setColor(color);
         g2d.fill(shape);
+        g2d.drawImage(image,(int)position.getYPosition(),(int)position.getXPosition(), null);
     }
 
     public float getX() {
