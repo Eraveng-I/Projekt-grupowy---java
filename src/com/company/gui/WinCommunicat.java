@@ -14,8 +14,6 @@ public class WinCommunicat {
      JPanel panel = new JPanel();
      JLabel communicat = new JLabel("Winner: Leo Messi");
 
-
-
      JButton Restart = new JButton("Play again");
 
 
@@ -39,9 +37,6 @@ public class WinCommunicat {
                 GUI.setWinnerButtonVisible();
             }
         });
-
-
-        //test bledow
 
         winComm.add(panel);
         panel.add(communicat);
