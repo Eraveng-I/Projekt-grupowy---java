@@ -15,6 +15,7 @@ public class WinCommunicat {
      JLabel communicat = new JLabel("Winner: Leo Messi");
 
      JButton Restart = new JButton("Play again");
+     JButton Exit = new JButton("Exit");
 
 
     public void setParameters(){
@@ -22,12 +23,20 @@ public class WinCommunicat {
 
         winComm.setBounds(430, 200, 200, 200);
         Restart.setBounds(500, 330, 200, 200);
+        Exit.setBounds(670, 460, 200, 200);
 
         Restart.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 winComm.setVisible(false);
                 GUI.setWinnerButtonVisible();
+            }
+        });
+
+        Restart.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
             }
         });
 
@@ -41,6 +50,7 @@ public class WinCommunicat {
         winComm.add(panel);
         panel.add(communicat);
         panel.add(Restart);
+        panel.add(Exit);
 
     }
 
