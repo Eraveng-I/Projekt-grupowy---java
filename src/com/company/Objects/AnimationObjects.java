@@ -24,7 +24,7 @@ public class AnimationObjects {
         Flag.setUpFlag(panel, objects, new ImageIcon("flag1.png").getImage(),Color.GREEN);
         Flag.setUpFlag(panel, objects, new ImageIcon("flag2.png").getImage(),Color.GREEN);
         Flag.setUpFlag(panel, objects, new ImageIcon("flag3.png").getImage(),Color.GREEN);
-        Flag.setUpFlag(panel, objects, new ImageIcon("flag4.png").getImage(),Color.GREEN);
+        Flag.setUpFlag(panel, objects, new ImageIcon("flag4.png").getImage(),Color.RED);
         Flag.setUpFlag(panel, objects, new ImageIcon("flag5.png").getImage(),Color.GREEN);
         Flag.setUpFlag(panel, objects, new ImageIcon("flag6.png").getImage(),Color.GREEN);
         Flag.setUpFlag(panel, objects, new ImageIcon("flag7.png").getImage(),Color.GREEN);
