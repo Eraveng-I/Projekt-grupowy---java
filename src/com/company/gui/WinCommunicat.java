@@ -41,7 +41,7 @@ public class WinCommunicat {
         });
 
 
-
+        //test bledow
 
         winComm.add(panel);
         panel.add(communicat);
