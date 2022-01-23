@@ -170,7 +170,7 @@ public class Flag{
             if(velocity.x < 0.1 && velocity.y < 0.1){
                 isWinner = false;
 
-
+                GUI.winnerButton.setVisible(false);
                 GUI.comm.winComm.setVisible(true);
             }
         }

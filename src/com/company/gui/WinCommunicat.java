@@ -14,10 +14,9 @@ public class WinCommunicat {
      JButton Restart = new JButton("Play again");
 
     public void setParameters(){
-        panel.setPreferredSize(new Dimension(1000,500));
         panel.setBackground(Color.GREEN);
 
-        winComm.setBounds(500, 300, 200, 200);
+        winComm.setBounds(430, 200, 200, 200);
         Restart.setBounds(500, 330, 200, 200);
 
         winComm.add(panel);

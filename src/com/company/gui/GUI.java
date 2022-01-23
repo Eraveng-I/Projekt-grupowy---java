@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 public class GUI {
     private final AnimationPanel animationPanel = new AnimationPanel();
     public static WinCommunicat comm = new WinCommunicat();
-
+    public static JButton winnerButton = new JButton("Announce the winner");
     public GUI(){
 
         comm.setParameters();
@@ -28,7 +28,7 @@ public class GUI {
                 Animation.setIsEndOfProgram(true);
             }
         });
-        JButton winnerButton = new JButton("Announce the winner");
+
         winnerButton.setBounds(500, 3000, 200, 200);
         winnerButton.setBackground(Color.white);
         winnerButton.addActionListener(new ActionListener() {
