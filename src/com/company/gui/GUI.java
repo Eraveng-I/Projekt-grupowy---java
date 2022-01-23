@@ -43,7 +43,7 @@ public class GUI {
         
         looserButton.setBounds(500,3000,200,200);
         looserButton.setBackground(Color.RED);
-         winnerButton.addActionListener(new ActionListener() {
+        looserButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 var polandFlag = animationPanel.getAnimation().getObjects().getBallByColor(Color.RED);
