@@ -8,6 +8,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import com.company.math.Vector2D;
 
+import javax.swing.*;
+
 
 public class AnimationObjects {
     private final AnimationPanel panel;
@@ -18,14 +20,14 @@ public class AnimationObjects {
     public AnimationObjects(AnimationPanel panel){this.panel = panel;}
 
     public void prepareObjects() {
-        Flag.setUpFlag(panel, objects, Color.RED);
-        Flag.setUpFlag(panel, objects, Color.PINK);
-        Flag.setUpFlag(panel, objects, Color.CYAN);
-        Flag.setUpFlag(panel, objects, Color.GREEN);
-        Flag.setUpFlag(panel, objects, Color.MAGENTA);
-        Flag.setUpFlag(panel, objects, Color.BLACK);
-        Flag.setUpFlag(panel, objects, Color.BLUE);
-        Flag.setUpFlag(panel, objects, Color.GRAY);
+        Flag.setUpFlag(panel, objects, new ImageIcon("flag0.png").getImage(),Color.cyan);
+        Flag.setUpFlag(panel, objects, new ImageIcon("flag1.png").getImage(),Color.GREEN);
+        Flag.setUpFlag(panel, objects, new ImageIcon("flag2.png").getImage(),Color.GREEN);
+        Flag.setUpFlag(panel, objects, new ImageIcon("flag3.png").getImage(),Color.GREEN);
+        Flag.setUpFlag(panel, objects, new ImageIcon("flag4.png").getImage(),Color.GREEN);
+        Flag.setUpFlag(panel, objects, new ImageIcon("flag5.png").getImage(),Color.GREEN);
+        Flag.setUpFlag(panel, objects, new ImageIcon("flag6.png").getImage(),Color.GREEN);
+        Flag.setUpFlag(panel, objects, new ImageIcon("flag7.png").getImage(),Color.GREEN);
         ball = GoldenBall.setUpBall(panel, Color.decode("#D8C841"));
         executorService = Executors.newFixedThreadPool(objects.size());
     }

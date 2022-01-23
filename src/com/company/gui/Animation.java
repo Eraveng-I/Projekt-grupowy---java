@@ -68,7 +68,9 @@ public class Animation {
 
     public void render(Graphics2D g2d) {
         objects.getObjects().stream().filter(Objects::nonNull).forEach(o -> o.render(g2d));
-        objects.getBall().render(g2d);
+        if (objects.getBall() != null){
+            objects.getBall().render(g2d);
+        }
         g2d.setColor(Color.GREEN);
         g2d.drawString("FPS: " + fps + "", 5, 15);
     }

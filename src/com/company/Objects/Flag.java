@@ -6,6 +6,7 @@ import com.company.gui.GUI;
 import com.company.gui.WinCommunicat;
 import com.company.math.Vector2D;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.util.ArrayList;
@@ -25,11 +26,12 @@ public class Flag{
     private float maxAcceleration = 10f;
     private float separationWeight = 10f;
     private boolean isWinner = false;
+    private Image image;
 
-
-        public Flag(Vector2D position, Color color, float diameter,AnimationPanel panel) {
+        public Flag(Vector2D position, Image image, float diameter,AnimationPanel panel,Color color) {
             super();
             this.position = position;
+            this.image = image;
             this.color = color;
             this.diameter = diameter;
             this.shape = new Ellipse2D.Float(0, 0,diameter,diameter);
@@ -37,12 +39,12 @@ public class Flag{
         }
 
 
-    public static void setUpFlag(AnimationPanel panel, ArrayList<Flag> objects, Color color){
+    public static void setUpFlag(AnimationPanel panel, ArrayList<Flag> objects, Image image,Color color){
             Flag flag = new Flag(new Vector2D(
                     Vector2D.randomFloat(0f, (float) panel.getBounds().getMaxX()),
                     Vector2D.randomFloat(0f, (float) panel.getBounds().getMaxY())
             ),
-                    color, diameter, panel);
+                    image, diameter, panel,color);
             flag.velocity = new Vector2D(
                     Vector2D.randomFloat(0f,100f),
                     Vector2D.randomFloat(0f,100f));
@@ -154,8 +156,9 @@ public class Flag{
     }
 
     public void render(Graphics2D g2d){
-        g2d.setColor(color);
         g2d.fill(shape);
+        g2d.drawImage(image,(int)position.getXPosition(),(int)position.getYPosition(), null);
+        g2d.setColor(color);
     }
 
     public void toGoldenBall(Flag obj, Vector2D velocity){
@@ -182,6 +185,9 @@ public class Flag{
 
     public Color getColor(){
         return this.color;
+    }
+    public Image getImage(){
+            return this.image;
     }
 
 
