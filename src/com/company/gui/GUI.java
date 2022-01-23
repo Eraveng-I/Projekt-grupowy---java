@@ -50,6 +50,24 @@ public class GUI {
                 polandFlag.setIsLooser(true);
             }
         });
+
+        JButton funFact = new JButton();
+        funFact.setBounds(500,3000,200,200);
+        funFact.setBackground(Color.cyan);
+        animationPanel.add(funFact);
+        funFact.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame1 = new JFrame("Fun Fact");
+                frame1.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+                frame1.setSize(500, 100);
+                frame1.setVisible(true);
+                frame1.setResizable(false);
+                JLabel label1 = new JLabel();
+                label1.setText("Pierwszym i jedynym bramkarzem, który zdobył złotą piłkę, był Lew Yashin.");
+                frame1.add(label1);
+            }
+        });
         
         animationPanel.add(looserButton);
 
