@@ -24,5 +24,9 @@ public class AnimationPanel extends JPanel {
 
         animation.render(g2d);
     }
+
+    public Animation getAnimation(){
+        return this.animation;
+    }
 }
 

@@ -22,6 +22,8 @@ public class Flag{
     private float maxSpeed = 80f;
     private float maxAcceleration = 10f;
     private float separationWeight = 10f;
+    private boolean isWinner = false;
+
 
         public Flag(Vector2D position, Color color, float diameter,AnimationPanel panel) {
             super();
@@ -113,7 +115,7 @@ public class Flag{
 
     private Vector2D ballContact(GoldenBall ball) {
         Vector2D steer = Vector2D.ZERO;
-        if (ball.getInvertedPosition().subtract(position).magnitude() < ball.getDiameter()) {
+        if (ball.getInvertedPosition().subtract(position).magnitude() < ball.getDiameter() && !isWinner) {
             float distance = Vector2D.distance(position, ball.getInvertedPosition());
             Vector2D diff = position.subtract(ball.getInvertedPosition());
             if (distance * distance > 0) {
@@ -150,6 +152,21 @@ public class Flag{
         g2d.setColor(color);
         g2d.fill(shape);
     }
+
+    public void toGoldenBall(){
+        if(isWinner){
+
+        }
+    }
+
+    public void setIsWinner(boolean _isWinner){
+        isWinner = _isWinner;
+    }
+
+    public Color getColor(){
+        return this.color;
+    }
+
 
     public int getIndex() {
         return index;

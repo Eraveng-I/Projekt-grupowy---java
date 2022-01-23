@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GUI {
     private final AnimationPanel animationPanel = new AnimationPanel();
@@ -24,6 +26,18 @@ public class GUI {
                 Animation.setIsEndOfProgram(true);
             }
         });
+        JButton winnerButton = new JButton("Announce the winner");
+        winnerButton.setBounds(500, 3000, 200, 200);
+        winnerButton.setBackground(Color.white);
+        winnerButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                var argentinaFlag = animationPanel.getAnimation().getObjects().getBallByColor(Color.cyan);
+                argentinaFlag.setIsWinner(true);
+            }
+        });
+        animationPanel.add(winnerButton);
+
         animationPanel.startAnimation();
     }
 

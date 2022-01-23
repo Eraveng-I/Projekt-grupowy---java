@@ -6,6 +6,8 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import com.company.math.Vector2D;
+
 
 public class AnimationObjects {
     private final AnimationPanel panel;
@@ -37,6 +39,10 @@ public class AnimationObjects {
 
     public ArrayList<Flag> getObjects() {
         return objects;
+    }
+
+    public Flag getBallByColor(Color _color){
+        return objects.stream().filter(f -> _color.equals(f.getColor())).findFirst().orElse(null);
     }
 
     public GoldenBall getBall() {

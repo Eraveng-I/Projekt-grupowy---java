@@ -62,6 +62,9 @@ public class Animation {
         }
     }
 
+    public AnimationObjects getObjects(){
+        return this.objects;
+    }
 
     public void render(Graphics2D g2d) {
         objects.getObjects().stream().filter(Objects::nonNull).forEach(o -> o.render(g2d));
