@@ -175,7 +175,15 @@ public class Flag{
             Vector2D newPosition = position.add(velocity.multiply(Animation.frameTime));
             moveTo(newPosition);
 
-            if(velocity.x < 0.1 && velocity.y < 0.1){
+            if (velocity.x < (-0.1) && velocity.y < (-0.1)){
+                if(velocity.x >= (-0.1) && velocity.y >= (-0.1)){
+                    isWinner = false;
+
+                    GUI.winnerButton.setVisible(false);
+                    GUI.comm.winComm.setVisible(true);
+                }
+            }
+            else if(velocity.x < 0.1 && velocity.y < 0.1){
                 isWinner = false;
 
                 GUI.winnerButton.setVisible(false);
