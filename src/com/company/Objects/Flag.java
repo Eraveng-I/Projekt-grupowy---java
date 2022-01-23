@@ -149,6 +149,7 @@ public class Flag{
         }
 
         toGoldenBall(obj, velocity);
+        tryToGoldenBall(obj, velocity);
 
         Vector2D newPosition = position.add(velocity.multiply(Animation.frameTime));
         moveTo(newPosition);
@@ -178,10 +179,26 @@ public class Flag{
             }
         }
     }
+    
+    public void tryToGoldenBall(Flag obj, Vector2D velocity){
+            if(isLooser){
+
+                velocity.x = (450 - obj.position.getXPosition());
+                velocity.y = (200- obj.position.getYPosition());
+
+                Vector2D newPosition = position.add(velocity.multiply(Animation.frameTime));
+                moveTo(newPosition);
+
+                isLooser = false;
+            }
+    }
+    
+   
 
     public void setIsWinner(boolean _isWinner){
         isWinner = _isWinner;
     }
+    public void setIsLooser(boolean isLooser){this.isLooser = isLooser;}
 
     public Color getColor(){
         return this.color;
