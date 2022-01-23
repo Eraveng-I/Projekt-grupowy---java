@@ -11,6 +11,7 @@ public class GUI {
     private final AnimationPanel animationPanel = new AnimationPanel();
     public static WinCommunicat comm = new WinCommunicat();
     public static JButton winnerButton = new JButton("Announce the winner");
+    public static JButton looserButton = new JButton("Vote for Lewy);
     public GUI(){
 
         comm.setParameters();
@@ -39,6 +40,18 @@ public class GUI {
             }
         });
         animationPanel.add(winnerButton);
+        
+        looserButton.setBounds(500,3000,200,200);
+        looserButton.setBackground(Color.RED);
+         winnerButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                var polandFlag = animationPanel.getAnimation().getObjects().getBallByColor(Color.RED);
+                polandFlag.setIslooser(true);
+            }
+        });
+        
+        animationPanel.add(looserButton);
 
         animationPanel.startAnimation();
     }
