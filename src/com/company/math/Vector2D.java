@@ -129,4 +129,8 @@ public class Vector2D {
                 ", y=" + y +
                 '}';
     }
+
+    public float getXPosition() {return this.x;}
+
+    public float getYPosition() {return this.y;}
 }

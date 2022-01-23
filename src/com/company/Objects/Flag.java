@@ -19,7 +19,7 @@ public class Flag{
     private Vector2D acceleration;
     private final AnimationPanel panel;
     private int index;
-    private float maxSpeed = 80f;
+    private float maxSpeed = 200f; // zmienione z 80 na 200
     private float maxAcceleration = 10f;
     private float separationWeight = 10f;
     private boolean isWinner = false;
@@ -134,7 +134,7 @@ public class Flag{
         return steer;
     }
 
-    public void update(ArrayList<Flag> objects, GoldenBall ball){
+    public void update(ArrayList<Flag> objects, GoldenBall ball, Flag obj){
         acceleration = Vector2D.ZERO;
         acceleration = acceleration.add(ballContact(ball));
         acceleration = acceleration.add(separation(objects));
@@ -143,6 +143,9 @@ public class Flag{
         if (velocity.magnitude() > 0) {
             velocity.limit(maxSpeed);
         }
+
+        toGoldenBall(obj, velocity);
+
         Vector2D newPosition = position.add(velocity.multiply(Animation.frameTime));
         moveTo(newPosition);
         remainOnScreen(panel.getBounds());
@@ -153,9 +156,18 @@ public class Flag{
         g2d.fill(shape);
     }
 
-    public void toGoldenBall(){
+    public void toGoldenBall(Flag obj, Vector2D velocity){
         if(isWinner){
 
+            velocity.x = (450 - obj.position.getXPosition());
+            velocity.y = (200 - obj.position.getYPosition());
+
+            Vector2D newPosition = position.add(velocity.multiply(Animation.frameTime));
+            moveTo(newPosition);
+
+            if(velocity.x < 0.1 && velocity.y < 0.1){
+                isWinner = false;
+            }
         }
     }
 
