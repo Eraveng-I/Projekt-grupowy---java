@@ -33,7 +33,7 @@ public class WinCommunicat {
             }
         });
 
-        Restart.addActionListener(new ActionListener() {
+        Exit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.exit(0);
