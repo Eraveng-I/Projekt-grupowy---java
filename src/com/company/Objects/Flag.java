@@ -26,6 +26,7 @@ public class Flag{
     private float maxAcceleration = 10f;
     private float separationWeight = 10f;
     private boolean isWinner = false;
+    private boolean isLooser = false;
     private Image image;
 
         public Flag(Vector2D position, Image image, float diameter,AnimationPanel panel,Color color) {
