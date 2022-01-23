@@ -9,9 +9,11 @@ import java.awt.event.ActionListener;
 
 public class GUI {
     private final AnimationPanel animationPanel = new AnimationPanel();
-
+    public static WinCommunicat comm = new WinCommunicat();
 
     public GUI(){
+
+        comm.setParameters();
         JFrame frame = new JFrame("Golden ball event");
         animationPanel.setPreferredSize(new Dimension(1000,500));
         frame.getContentPane().add(BorderLayout.CENTER, animationPanel);

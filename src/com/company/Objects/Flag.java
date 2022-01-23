@@ -2,6 +2,8 @@ package com.company.Objects;
 
 import com.company.gui.Animation;
 import com.company.gui.AnimationPanel;
+import com.company.gui.GUI;
+import com.company.gui.WinCommunicat;
 import com.company.math.Vector2D;
 
 import java.awt.*;
@@ -167,6 +169,9 @@ public class Flag{
 
             if(velocity.x < 0.1 && velocity.y < 0.1){
                 isWinner = false;
+
+
+                GUI.comm.winComm.setVisible(true);
             }
         }
     }
