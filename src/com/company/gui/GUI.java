@@ -11,7 +11,7 @@ public class GUI {
     private final AnimationPanel animationPanel = new AnimationPanel();
     public static WinCommunicat comm = new WinCommunicat();
     public static JButton winnerButton = new JButton("Announce the winner");
-    public static JButton looserButton = new JButton("Vote for Lewy);
+    public static JButton looserButton = new JButton("Vote for Lewy");
     public GUI(){
 
         comm.setParameters();
