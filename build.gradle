@@ -1,0 +1,13 @@
+plugins {
+    id 'java'
+}
+jar {
+    manifest {
+        attributes 'Main-Class': "company.com.gui.GUI"
+    }
+}
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
