@@ -1,10 +1,12 @@
 package com.company.gui;
 
 import com.company.Objects.AnimationObjects;
+import com.company.Objects.Flag;
 
 import javax.swing.*;
 import java.awt.*;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Animation {
@@ -67,7 +69,15 @@ public class Animation {
     }
 
     public void render(Graphics2D g2d) {
-        objects.getObjects().stream().filter(Objects::nonNull).forEach(o -> o.render(g2d));
+        ArrayList<Flag> listOfObjects = objects.getObjects();
+        Flag object;
+        for (int i = 0; i < listOfObjects.size(); i++){
+           object = listOfObjects.get(i);
+            if (object!=null){
+                listOfObjects.get(i).render(g2d);
+            }
+        }
+//        objects.getObjects().stream().filter(Objects::nonNull).forEach(o -> o.render(g2d));
         if (objects.getBall() != null){
             objects.getBall().render(g2d);
         }
