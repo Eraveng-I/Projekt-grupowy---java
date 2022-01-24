@@ -12,7 +12,7 @@ public class GUI {
     public static WinCommunicat comm = new WinCommunicat();
     public static JButton winnerButton = new JButton("Announce the winner");
     public static JButton looserButton = new JButton("Vote for Lewy");
-    public static JButton funFact = new JButton("Ciekawostka");
+    public static JButton funFact = new JButton("Curio");
     public GUI(){
 
         comm.setParameters();
@@ -64,7 +64,7 @@ public class GUI {
                 frame1.setVisible(true);
                 frame1.setResizable(false);
                 JLabel label1 = new JLabel();
-                label1.setText("Pierwszym i jedynym bramkarzem, który zdobył złotą piłkę, był Lew Yashin.");
+                label1.setText("The first and only gatekeeper to win the Golden Ball is Lew Yashin.");
                 frame1.add(label1);
             }
         });
