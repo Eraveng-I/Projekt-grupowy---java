@@ -1,6 +1,8 @@
 plugins {
     id 'java'
+    id 'application'
 }
+mainClassName = 'com.company.gui.GUI'
 jar {
     manifest {
         attributes 'Main-Class': "company.com.gui.GUI"
